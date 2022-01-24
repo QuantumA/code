@@ -6,6 +6,7 @@ import config
 
 
 def random_suffix():
+    """Genera caracteres aleatorios usando el modulo uuid."""
     return uuid.uuid4().hex[:6]
 
 
