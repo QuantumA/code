@@ -13,7 +13,12 @@ def is_valid_sku(sku, batches):
     return sku in {b.sku for b in batches}
 
 
-def allocate(line: OrderLine, repo: AbstractRepository, session) -> str:
+def allocate(line: OrderLine, repo: AbstractRepository, session) -> str: # Inversión de dependencias (Depende de una abstracción)
+    """
+
+    
+    """
+
     batches = repo.list()
     if not is_valid_sku(line.sku, batches):
         raise InvalidSku(f"Invalid sku {line.sku}")
