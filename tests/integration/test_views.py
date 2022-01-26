@@ -3,9 +3,9 @@ from datetime import date
 from sqlalchemy.orm import clear_mappers
 from unittest import mock
 import pytest
-from allocation import bootstrap, views
-from allocation.domain import commands
-from allocation.service_layer import unit_of_work
+from src.allocation import bootstrap, views
+from src.allocation.domain import commands
+from src.allocation.service_layer import unit_of_work
 
 today = date.today()
 

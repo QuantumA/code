@@ -1,6 +1,6 @@
 from datetime import date, timedelta
-from allocation.domain import events
-from allocation.domain.model import Product, OrderLine, Batch
+from src.allocation.domain import events
+from src.allocation.domain.model import Product, OrderLine, Batch
 
 
 today = date.today()

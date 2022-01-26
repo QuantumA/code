@@ -4,11 +4,11 @@ from collections import defaultdict
 from datetime import date
 from typing import Dict, List
 import pytest
-from allocation import bootstrap
-from allocation.domain import commands
-from allocation.service_layer import handlers
-from allocation.adapters import notifications, repository
-from allocation.service_layer import unit_of_work
+from src.allocation import bootstrap
+from src.allocation.domain import commands
+from src.allocation.service_layer import handlers
+from src.allocation.adapters import notifications, repository
+from src.allocation.service_layer import unit_of_work
 
 
 class FakeRepository(repository.AbstractRepository):

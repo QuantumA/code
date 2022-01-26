@@ -1,7 +1,7 @@
 # pylint: disable=too-few-public-methods
 import abc
 import smtplib
-from allocation import config
+from src.allocation import config
 
 
 class AbstractNotifications(abc.ABC):

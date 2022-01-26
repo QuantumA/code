@@ -11,8 +11,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, clear_mappers
 from tenacity import retry, stop_after_delay
 
-from allocation.adapters.orm import metadata, start_mappers
-from allocation import config
+from src.allocation.adapters.orm import metadata, start_mappers
+from src.allocation import config
 
 pytest.register_assert_rewrite("tests.e2e.api_client")
 

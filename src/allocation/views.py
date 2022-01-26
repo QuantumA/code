@@ -1,4 +1,4 @@
-from allocation.service_layer import unit_of_work
+from src.allocation.service_layer import unit_of_work
 
 
 def allocations(orderid: str, uow: unit_of_work.SqlAlchemyUnitOfWork):

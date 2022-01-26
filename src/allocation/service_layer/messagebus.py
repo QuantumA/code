@@ -2,7 +2,7 @@
 from __future__ import annotations
 import logging
 from typing import Callable, Dict, List, Union, Type, TYPE_CHECKING
-from allocation.domain import commands, events
+from src.allocation.domain import commands, events
 
 if TYPE_CHECKING:
     from . import unit_of_work

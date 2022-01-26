@@ -3,8 +3,8 @@ import logging
 from dataclasses import asdict
 import redis
 
-from allocation import config
-from allocation.domain import events
+from src.allocation import config
+from src.allocation.domain import events
 
 logger = logging.getLogger(__name__)
 
