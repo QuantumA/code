@@ -48,19 +48,21 @@ class Product:
             line = batch.deallocate_one()
             self.events.append(events.Deallocated(line.orderid, line.sku, line.qty))
 
+Quantity = NewType("Quantity", int)
+Sku = NewType("Sku", str)
+Reference = NewType("Reference", str)
+OrderId = NewType("OrderId", str)
 
 @dataclass(unsafe_hash=True)
 class OrderLine:
     """Reprsenta los pedidos que pueden hacer los clientes.
     Esta tiene un sku y una cantidad (qty)
     """
-    orderid: str
-    sku: str
-    qty: int
+    orderid: OrderId
+    sku: Sku
+    qty: Quantity
 
-Quantity = NewType("Quantity", int)
-Sku = NewType("Sku", str)
-Reference = NewType("Reference", str)
+
 class Batch:
     """El departamento de compras pide pequeños lotes de stock.
        Un lote de stock tiene un ID único llamado referencia, una SKU y una cantidad.

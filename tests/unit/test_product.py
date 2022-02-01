@@ -9,11 +9,17 @@ later = tomorrow + timedelta(days=10)
 
 
 def test_prefers_warehouse_batches_to_shipments():
+
+    # Creamos dos lotes del mismo producto.
     in_stock_batch = Batch("in-stock-batch", "RETRO-CLOCK", 100, eta=None)
     shipment_batch = Batch("shipment-batch", "RETRO-CLOCK", 100, eta=tomorrow)
-    product = Product(sku="RETRO-CLOCK", batches=[in_stock_batch, shipment_batch])
-    line = OrderLine("oref", "RETRO-CLOCK", 10)
 
+
+    # Definimos un producto que puede estar contenido en distintos lotes
+    product = Product(sku="RETRO-CLOCK", batches=[in_stock_batch, shipment_batch])
+
+    # Realizamos una orden para ese producto
+    line = OrderLine("oref", "RETRO-CLOCK", 10)
     product.allocate(line)
 
     assert in_stock_batch.available_quantity == 90
